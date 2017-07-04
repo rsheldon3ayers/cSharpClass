@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assignment_5
+namespace Assignment6
 {
 	class CheckingAccount : Account
 	{
 		private decimal FeeCharged;
 
+        public CheckingAccount()
+        {
+            
+        }
 		//Constructor
 		public CheckingAccount(string acct_name, int acct_number, decimal acct_balance, decimal fee)
 			: base(acct_name, acct_number, acct_balance)
@@ -21,7 +25,7 @@ namespace Assignment_5
 		{
 			if (fee < 0)
 			{
-				FeeCharged = 0.0M;
+                throw new NegativeNumberException();
 			}
 			else
 			{

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assignment_5
+namespace Assignment6
 {
 	class Account
 	{
@@ -17,6 +17,10 @@ namespace Assignment_5
 
 
 		//Construtor 
+        public Account()
+        {
+            
+        }
 		public Account(string acct_name, int acct_number, decimal acct_balance)
 		{
 			setAccountName(acct_name);
@@ -51,7 +55,7 @@ namespace Assignment_5
 		{
 			if (acct_balance < 0)
 			{
-				Balance = 0.0M;
+                throw new NegativeNumberException();
 			}
 			else
 			{
